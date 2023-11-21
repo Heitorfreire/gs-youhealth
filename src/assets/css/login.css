@@ -19,7 +19,7 @@ body .container {
   margin: auto;
   grid-template-areas: ". header_element header_element header_element header_element header_element header_element header_element  header_element header_element header_element ." ". . . . login login login login . . . .";
   gap: 0.8rem;
-  row-gap: 15rem;
+  row-gap: 5rem;
 }
 @media (max-width: 768px) {
   body .container {
@@ -83,7 +83,7 @@ body .box-container .box-form .input-box i {
 body .box-container .box-form .remember-forgot {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: row;
   gap: 1rem;
   font-size: 14.5px;
   width: 80%;
@@ -101,6 +101,11 @@ body .box-container .box-form .remember-forgot a {
 body .box-container .box-form .remember-forgot a:hover {
   color: #00B422;
   text-decoration: underline;
+}
+@media (max-width: 768px) {
+  body .box-container .box-form .remember-forgot {
+    flex-direction: column;
+  }
 }
 body .box-container .box-form .btn {
   width: 60%;

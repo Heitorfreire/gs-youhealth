@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+
+$columns: 12;
+$gap: 0.8rem;
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: url(../img/background.png) no-repeat;
+    background-size: cover;
+    height: fit-content;
+    
+    overflow-y: auto;
+
+    color: white;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat($columns, 1fr);
+        padding: 1rem 0 3rem;
+        width: 80%;
+        margin: auto;
+        grid-template-areas: 
+        ". header_element header_element header_element header_element header_element header_element header_element  header_element header_element header_element ."
+        ". main_image main_image main_image main_image main_image . questions questions questions questions ."
+        ". main_image main_image main_image main_image main_image . questions questions questions questions ."
+        ". main_image main_image main_image main_image main_image . questions questions questions questions ."
+        ". image_description image_description image_description image_description image_description  . questions questions questions questions ."
+        ". benefits benefits benefits benefits benefits benefits benefits benefits benefits benefits ."
+        ;
+        gap: $gap;
+        
+
+        @media (max-width:768px) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "header_element header_element"
+            "main_image main_image"
+            "questions questions"
+            "image_description image_description"
+            "benefits benefits"
+            ;
+            row-gap: 3rem;
+        }
+
+        header {
+            grid-area: header_element;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding-bottom: 5rem;
+
+            @media (max-width:768px) {
+                padding-bottom: 0.8rem;
+            }
+        }
+    
+        .main-img-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 1rem;
+            border-radius: 1em;
+            color: white;
+            grid-area: main_image;
+            height: 95%;
+            background: linear-gradient(
+                to right,
+                rgb(0 0 0 /2),
+                rgb(0 0 0/ 0)
+            ),url(/src/assets/img/main-image.png);
+
+            span {
+                color: #00B422;
+            }
+
+            @media (max-width:768px) {
+                padding: 2em;
+            }
+        }
+
+         .description-container {
+            grid-area: image_description;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            justify-content: space-around;
+
+            .description-text {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                align-items: flex-end;
+                width: 55%; 
+
+                button {
+                    width: 60%;
+                    padding: 0.7em;
+                    background:linear-gradient(90deg, rgba(0,93,18,1) 0%, rgba(0,252,48,1) 100%); ;
+                    border:none;
+                    outline: none;
+                    border-radius: 40px;
+                    box-shadow: 0 0 10px rgba(0,0,0,.1);
+                    cursor: pointer;
+                    font-size: 13px;
+                    color:#fff;
+                    font-weight: 600;
+                }
+    
+                button:hover {
+                    opacity: 0.8;
+                } 
+
+                p {
+                    font-size: 0.8em;
+                }
+            }
+            
+            span {
+                color: #00B422;
+            }
+
+            @media (max-width:768px) {
+             flex-direction: column;
+            }
+         }
+
+         .questions-container {
+            grid-area: questions;
+
+            .questions-sub-container {
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 4rem;
+
+                p {
+                    font-size: 0.8em;
+                }
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1em;
+                }
+            }
+
+         }
+
+         .benefits-container {
+            grid-area: benefits;
+            
+            .benefits-cards {
+                display: flex;
+                flex-direction: row;
+                gap: 4rem;
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    
+                    p {
+                        font-weight: bold;
+                        font-size: 1em;
+                    }
+
+                    img {
+                        height: 95%;
+                    }
+                }
+
+                @media (max-width:768px) {
+                    flex-direction: column;
+                    div {
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+            }
+         }
+    }
+}
