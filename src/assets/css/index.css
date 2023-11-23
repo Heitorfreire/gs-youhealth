@@ -54,7 +54,7 @@ body .container .main-img-container {
   color: white;
   grid-area: main_image;
   height: 95%;
-  background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(/src/assets/img/main-image.png);
+  background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(../img/main-image.png);
 }
 body .container .main-img-container span {
   color: #00B422;
